@@ -1,0 +1,12 @@
+[Unit]
+Description=testc systemd service
+After=dnsmasq.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/test_app
+StandardOutput=file:/home/root/testlog.txt
+StandardError=file:/home/root/testlogerror.txt
+
+[Install]
+WantedBy=multi-user.target
