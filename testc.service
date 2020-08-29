@@ -1,0 +1,15 @@
+[Unit]
+Description=testc systemd service
+After=dnsmasq.service
+
+[Service]
+Type=simple
+WorkingDirectory=/usr/local/src/CoreApplication
+ExecStartPre=/bin/mv /home/root/testc.log /home/root/testc.log_bkup
+ExecStart=/usr/local/src/CoreApplication/testc
+StandardOutput=file:/home/root/testc.log
+StandardError=file:/home/root/testc.error.log
+
+[Install]
+WantedBy=multi-user.target
+

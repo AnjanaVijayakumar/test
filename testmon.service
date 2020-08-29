@@ -1,0 +1,10 @@
+[Unit]
+Description=testc Monitor service
+After=testc.service
+
+[Service]
+ExecStart=/bin/sh /usr/bin/testmon.sh
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
